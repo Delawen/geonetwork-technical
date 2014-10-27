@@ -57,8 +57,8 @@
 			<li>Web Map Viewer</li>
 			<li>Import/Export metadata</li>
 			<li>Medata edit based on templates</li>
-			<li>Roles and privileges</li>
 			<li>Harvesting</li>
+			<li>Roles and privileges</li>
 			<li>CSW</li>
 			<li>Configuration Basics</li>
 		</ul>
@@ -67,13 +67,15 @@
 <section>
 	<section>
 		<h2>Search Engine</h2>
+		<p>As a (geo)data portal, geoNetwork's main feature is search</p>
 		<p>All data is stored on the database, but it is not used for searching</p>
-		<p>Search is based on Lucene 4.9.0</p>
+		<p>Search is based on <a href="http://geonetwork-opensource.org/manuals/2.10.3/eng/developer/schemaPlugins/index.html?highlight=lucene#creating-the-index-fields-xsl-to-index-content-from-the-metadata-record">Lucene 4.9.0</a></p>
 	</section>
 	<section>
 		<h2>Search Engine</h2>
-		<p>Configure the fields used on search on index-fields.xsl</p>
-		<p>Configure the fields exposed on index-fields.xsl</p>
+		<p>Lucene folder path configurable</p>
+		<p>Configure the fields used on search on <a href="http://geonetwork-opensource.org/manuals/2.10.3/eng/developer/schemaPlugins/index.html?highlight=lucene#creating-the-index-fields-xsl-to-index-content-from-the-metadata-record">index-fields.xsl</a></p>
+		<p>Configure the fields exposed on <a href="http://geonetwork-opensource.org/manuals/2.10.3/eng/developer/schemaPlugins/index.html?highlight=lucene#creating-the-index-fields-xsl-to-index-content-from-the-metadata-record">index-fields.xsl</a></p>
 		<p>Available through the q API service</p>
 	</section>
 </section>
@@ -81,18 +83,22 @@
 	<section>
 		<h2>Web Map Viewer</h2>
 		<p>Part of the basic User Interface</p>
+		<p>Allows users to preview data layers</p>
+		<p>Read-only (view-only)</p>
+		<p>Geo-related services can be added (like geocoding)</p>
 	</section>
 </section>
 <section>
 	<section>
 		<h2>Import and Export metadata</h2>
-		<p></p>
-	</section>
-</section>
-<section>
-	<section>
-		<h2>Role and Privileges</h2>
-		<p></p>
+		<p>Standard way: CSW-t</p>
+		<p>Asynchronous way: Harvesting</p>
+		<p>geoNetwork services: 
+			<ul>
+				<li><a href="http://geonetwork-opensource.org/manuals/2.10.3/eng/developer/xml_services/metadata_xml_insert_update_delete.html#insert-metadata-xml-metadata-insert">insert</a></li>
+				<li><a href="http://geonetwork-opensource.org/manuals/2.10.3/eng/developer/xml_services/metadata_xml_insert_update_delete.html#update-metadata-xml-metadata-update">update</a></li>
+				<li><a href="http://geonetwork-opensource.org/manuals/2.10.3/eng/developer/xml_services/metadata_xml_insert_update_delete.html#delete-metadata-xml-metadata-delete">delete</a></p></li>
+			</ul>
 	</section>
 </section>
 <section>
@@ -102,6 +108,12 @@
 		<p>Periodicity can be defined on simple cron format</p>
 		<p>Multiple formats on origin</p>
 		<p>Users will not be able to modify this records, but can duplicate them</p>
+	</section>
+</section>
+<section>
+	<section>
+		<h2>Role and Privileges</h2>
+		<p>geoNetwork works with four types of users:</p>
 	</section>
 </section>
 <section>
