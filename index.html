@@ -53,29 +53,34 @@
 	<section>
 		<h2>Index</h2>
 		<ul>
-			<li>GeoNetwork main features</li>
-			<li><ul>
-				<li>Search Engine</li>
-				<li>Web Map Viewer</li>
-				<li>Import/Export metadata</li>
-				<li>Medata edit based on templates</li>
-				<li>Roles and privileges</li>
-				<li>Harvesting</li>
-				<li>CSW</li>
-			</ul></li>
+			<li>Search Engine</li>
+			<li>Web Map Viewer</li>
+			<li>Import/Export metadata</li>
+			<li>Medata edit based on templates</li>
+			<li>Roles and privileges</li>
+			<li>Harvesting</li>
+			<li>CSW</li>
+			<li>Configuration Basics</li>
 		</ul>
 	</section>
 </section>
 <section>
 	<section>
 		<h2>Search Engine</h2>
-		<p></p>
+		<p>All data is stored on the database, but it is not used for searching</p>
+		<p>Search is based on Lucene 4.9.0</p>
+	</section>
+	<section>
+		<h2>Search Engine</h2>
+		<p>Configure the fields used on search on index-fields.xsl</p>
+		<p>Configure the fields exposed on index-fields.xsl</p>
+		<p>Available through the q API service</p>
 	</section>
 </section>
 <section>
 	<section>
 		<h2>Web Map Viewer</h2>
-		<p></p>
+		<p>Part of the basic User Interface</p>
 	</section>
 </section>
 <section>
@@ -93,13 +98,38 @@
 <section>
 	<section>
 		<h2>Harvesting</h2>
-		<p></p>
+		<p>Periodical jobs that copy data from other catalogs</p>
+		<p>Periodicity can be defined on simple cron format</p>
+		<p>Multiple formats on origin</p>
+		<p>Users will not be able to modify this records, but can duplicate them</p>
 	</section>
 </section>
 <section>
 	<section>
 		<h2>CSW</h2>
-		<p>2.0.2</p>
+		<p>GeoNetwork is compliant with the <a href="http://portal.opengeospatial.org/files/?artifact_id=20555">2.0.2 version of the specification</a></p>
+		<p>http(s)://___/srv/$language/csw</p>
+	</section>
+	<section>
+		<h2>CSW</h2>
+		<p>GetCapabilities: general description of the service</p>
+		<p>DescribeRecord: information model supported by the service</p>
+	</section>
+	<section>
+		<h2>CSW</h2>
+		<p>GetRecordById: data of the record by identifier. Authentication optional</p>
+		<p>GetRecords: query the service using CQL or OGC Filter. Authentication optional</p>
+	</section>
+	<section>
+		<h2>CSW</h2>
+		<p>Harvest: Force a CSW harvesting (sync or async). Authentication required</p>
+		<p>Transaction: interface for creating, modifying and deleting catalogue records. Authentication required</p>
+	</section>
+</section>
+<section>
+	<section>
+		<h2>Configuration Basics</h2>
+		<p></p>
 	</section>
 </section>
 <section>
