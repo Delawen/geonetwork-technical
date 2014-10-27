@@ -18,7 +18,17 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 		<link rel="stylesheet" href="reveal.js/css/reveal.min.css">
-        	<link rel="stylesheet" href="stylesheets/geocat.css" id="theme">
+
+
+		<script>
+		if (window.location.search.indexOf('cobweb') > 0)
+		    document.write('<link rel="stylesheet" href="stylesheets/cobweb.css" id="theme">');
+		else if (window.location.search.indexOf('delawen') > 0)
+		    document.write('<link rel="stylesheet" href="stylesheets/delawen.css" id="theme">');
+		else
+			document.write('<link rel="stylesheet" href="stylesheets/geocat.css" id="theme">');
+		</script>
+        	
 
 		<!-- For syntax highlighting -->
 		<link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
@@ -37,11 +47,13 @@
 		<!--[if lt IE 9]>
 		<script src="reveal.js/lib/js/html5shiv.js"></script>
 		<![endif]-->
+
 	</head>
 
 	<body>
 
 		<div class="reveal">
+			<header class="universal">geoNetwork</header>
 			<div class="slides">
 <section>
     	<h1>geoNetwork</h1>
@@ -67,8 +79,10 @@
 <section>
 	<section>
 		<h2>Search Engine</h2>
-		<p>As a (geo)data portal, geoNetwork's main feature is search</p>
-		<p>All data is stored on the database, but it is not used for searching</p>
+		<p>As a (geo)data portal, geoNetwork's main feature</p>
+		<p> is search through metadata</p>
+		<p>All data is stored on the database, </p>
+		<p>but it is not used for searching</p>
 		<p>Search is based on <a href="http://geonetwork-opensource.org/manuals/2.10.3/eng/developer/schemaPlugins/index.html?highlight=lucene#creating-the-index-fields-xsl-to-index-content-from-the-metadata-record">Lucene 4.9.0</a></p>
 	</section>
 	<section>
@@ -99,6 +113,7 @@
 				<li><a href="http://geonetwork-opensource.org/manuals/2.10.3/eng/developer/xml_services/metadata_xml_insert_update_delete.html#update-metadata-xml-metadata-update">update</a></li>
 				<li><a href="http://geonetwork-opensource.org/manuals/2.10.3/eng/developer/xml_services/metadata_xml_insert_update_delete.html#delete-metadata-xml-metadata-delete">delete</a></p></li>
 			</ul>
+		</p>
 	</section>
 </section>
 <section>
@@ -113,7 +128,26 @@
 <section>
 	<section>
 		<h2>Role and Privileges</h2>
-		<p>geoNetwork works with four types of users:</p>
+		<p>geoNetwork works with <a href="http://www.geonetwork-opensource.org/manuals/2.8.0/eng/users/managing_metadata/ownership/index.html">four types of users:</a></p>
+		<p>
+			<ul>
+				<li>Registered User</li>
+				<li>Editor</li>
+				<li>Reviewer</li>
+				<li>Administrator</li>
+			</ul>
+		</p>
+		<p>Roles can be defined by group</p>
+	</section>
+	<section>
+		<h2>Role and Privileges</h2>
+		<p>The group <strong>All</strong> is a generic group for public data</p>
+		<p><img src="images/privileges.png"/></p>
+	</section>
+	<section>
+		<h2>Role and Privileges</h2>
+		<p>Records can be batch moved to another user</p>
+		<p><img src="images/transfer-ownership.png"/>
 	</section>
 </section>
 <section>
@@ -141,18 +175,54 @@
 <section>
 	<section>
 		<h2>Configuration Basics</h2>
-		<p></p>
+		<p>Based on database settings table and xml files</p>
+		<p>Latest versions rely more on Spring library</p>
+		<p>
+			<ul>
+				<li>Authentication & Security</li>
+				<li>Database connections</li>
+			</ul>
+		</p>
+	</section>
+	<section>
+		<h2>Configuration Basics</h2>
+		<div style="text-align:justify">
+			<p>Big catalogs (+100.000 records)
+				<ul>
+					<li>Use PostGIS index instead of Shapefiles</li>
+					<li>Tweak postgreSQL with more memory (spatial queries)</li>
+				</ul>
+			</p>
+			<p>Large catalogs (+300.000 records)
+				<ul>
+					<li>Consider clustering</li>
+				</ul>
+			</p>
+			<p>Huge catalogs (+1.000.000 records)
+				<ul>
+					<li>Check inodes (number of files)</li>
+					<li>Consider use SOLR instead of Lucene</li>
+				</ul>
+			</p>
+		</div>
 	</section>
 </section>
 <section>
 	<section>
-		<h2>This is it</h2>
+		<h2>The End</h2>
+		<p><img src="http://delawen.github.io/Taller-GIS/talleres/geonetwork/images/lotsofcats.png"><p/>
 		<a href="http://twitter.com/geocat_bv">@geocat_bv</a>
-		<img src="http://delawen.github.io/Taller-GIS/talleres/geonetwork/images/lotsofcats.png">
 	</section>
 </section>
 
 </div>
+			<footer class="universal">
+				<div> 
+					<img class="cobweb" />
+					<img class="eu" />
+				</div>
+				<footer/>
+			</footer>
 
 		</div>
 
